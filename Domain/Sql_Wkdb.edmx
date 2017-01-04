@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Domain.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="sys_User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Account" Type="nvarchar" MaxLength="20" />
+          <Property Name="PassWord" Type="nvarchar" MaxLength="1000" />
+          <Property Name="IsCanlogin" Type="int" />
+          <Property Name="ShowOrder1" Type="int" />
+          <Property Name="ShowOrder2" Type="int" />
+          <Property Name="PinYin1" Type="nvarchar" MaxLength="50" />
+          <Property Name="PinYin2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Face_Img" Type="nvarchar" MaxLength="200" />
+          <Property Name="Levels" Type="nvarchar" MaxLength="36" />
+          <Property Name="Dptid" Type="nvarchar" MaxLength="36" />
+          <Property Name="CreatePer" Type="nvarchar" MaxLength="36" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="UpdateUser" Type="nvarchar" MaxLength="36" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="LastLoginIP" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="DomainStoreContainer">
+          <EntitySet Name="sys_User" EntityType="Self.sys_User" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Domain" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="sys_User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Account" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PassWord" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="IsCanlogin" Type="Int32" />
+          <Property Name="ShowOrder1" Type="Int32" />
+          <Property Name="ShowOrder2" Type="Int32" />
+          <Property Name="PinYin1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PinYin2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Face_Img" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Levels" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Name="Dptid" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Name="CreatePer" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateUser" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="LastLoginIP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="sys_User" EntityType="Self.sys_User" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DomainStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="sys_User">
+            <EntityTypeMapping TypeName="Domain.sys_User">
+              <MappingFragment StoreEntitySet="sys_User">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+                <ScalarProperty Name="IsCanlogin" ColumnName="IsCanlogin" />
+                <ScalarProperty Name="ShowOrder1" ColumnName="ShowOrder1" />
+                <ScalarProperty Name="ShowOrder2" ColumnName="ShowOrder2" />
+                <ScalarProperty Name="PinYin1" ColumnName="PinYin1" />
+                <ScalarProperty Name="PinYin2" ColumnName="PinYin2" />
+                <ScalarProperty Name="Face_Img" ColumnName="Face_Img" />
+                <ScalarProperty Name="Levels" ColumnName="Levels" />
+                <ScalarProperty Name="Dptid" ColumnName="Dptid" />
+                <ScalarProperty Name="CreatePer" ColumnName="CreatePer" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="LastLoginIP" ColumnName="LastLoginIP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
