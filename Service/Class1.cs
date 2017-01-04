@@ -9,5 +9,6 @@ namespace Service
     //Service:数据库操作类库，所有针对于数据库的操作都应放在这里，引用Domain类库
     public class Class1
     {
+
     }
 }
